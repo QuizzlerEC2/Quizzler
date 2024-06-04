@@ -1,0 +1,152 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+
+<head>
+    
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+    a:link {
+      text-decoration: none;
+    }
+   .course-topics-container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.course-topics-container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 4px #003366;
+}
+
+.card-front p {
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS';
+    margin-bottom: 20px;
+    font-size: 230%;
+    text-transform: uppercase;
+    text-decoration:solid;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px aqua;
+}
+
+.topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.topic-card {
+    perspective: 1000px;
+    width: 250px;
+    height: 200px;
+    position: relative;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.topic-card:hover .card-content {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: white;
+    text-align: center;
+    
+}
+
+.card-back {
+    background-color: white;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+.card-back p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 300%;
+    color: #007bff;
+    text-shadow: 2px 2px 4px aqua;
+    font-weight: bold;
+}
+  </style>
+</head>
+
+
+<div class="course-topics-container" id="dev-table">
+    <h1>Course Topics</h1>
+    <br><br>
+    <div class="topics-grid">
+        {% for t in courses %}
+        <a href="{% url 'take-exam' t.id %}">
+            <div class="topic-card">
+                <div class="card-content">
+                    <div class="card-front">
+                        <p>{{ t.course_name }}</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Attempt Now</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+<br><br><br><br><br><br>
+{% endblock content %}
+<!-----------
+<div class="course-topics-container" id="dev-table">
+  <h1>Course Topics</h1>
+  {% for t in courses %}
+  <div class="topics-grid"><a  href="{% url 'take-exam' t.id  %}">
+      <div class="topic-card" >
+          <h2>{{t.course_name}}</h2>
+          <p>Attemt Now</p>
+      </div>
+  </div>
+  <br>
+  {% endfor %}
+</div>
+>

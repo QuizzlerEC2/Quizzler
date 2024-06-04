@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<style>
+  .jumbotron{
+    margin-bottom: 0px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/006/691/884/non_2x/blue-question-mark-background-with-text-space-quiz-symbol-vector.jpg');
+    background-size: cover;
+  }
+  body{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/006/691/884/non_2x/blue-question-mark-background-with-text-space-quiz-symbol-vector.jpg');
+    background-size: cover;
+  }
+
+  
+</style>
+<body>
+  {% include "exam/navbar.html" %}
+<br>
+<section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+  <div class="container1 text-center">
+    <h2 class="display-3 " style="text-decoration: none;color:white;"><b>Quiz Mastermind Platform</b></h2>
+    <p class="display-4 d-none d-sm-block" style="text-decoration: none;color:black"><b>Exclusive Quiz platform for <br>MCA Students!</b></p>
+    <p class="lead" style="text-decoration: none;color:white">Sign Up now to start your first Quiz</p>
+
+  
+    <p style="text-decoration: none;color:white"> <strong> Start Your Journey Here:</strong></p>
+    <a href="/student/studentsignup" class="btn btn-lg btn-info" style="padding-right: 35px; border-radius: 0%;text-decoration: none;color:black"><i class="fa fa-graduation-cap" aria-hidden="true" style="text-decoration: none;color:black"></i> Sign Up as Student</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>  
+</section>
+  {% include "exam/footer.html" %}
+
+
+</body>
+
+</html>

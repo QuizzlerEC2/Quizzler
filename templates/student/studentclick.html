@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/006/691/884/non_2x/blue-question-mark-background-with-text-space-quiz-symbol-vector.jpg');
+      background-size: cover;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+      color: antiquewhite;
+      font-family: "Arial, Helvetica, sans-serif";
+      font-size: 60px;
+    }
+    .jumbotron p{
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-variant:small-caps;
+      color: #000080;
+    }
+
+    
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "exam/navbar.html" %}
+  <br><br>
+  <div class="jumbotron" style="margin-bottom:0px;">
+    <h1 class="display-4">Hello Student,</h1>
+    <p class="lead">and Welcome to Quiz Mastermind Platform</p>
+    <br><br><br>
+    <p>New user? Register Now...</p>
+    <p class="lead">
+      <a class="btn btn-primary rounded-0" href="studentsignup" role="button">Create Your Account</a><br><br>
+      <a class="btn btn-primary rounded-0" href="studentlogin" role="button">Login Now</a>
+    </p>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+ 
+  {% include "exam/footer.html" %}
+</body>
+
+</html>
